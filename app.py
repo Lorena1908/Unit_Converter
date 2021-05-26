@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, url_for, redirect
-from types_of_units import length, area, pressure, temperature
+from types_of_units import length, area, pressure, temperature, mass, time, volume, speed, energy
 
 app = Flask(__name__)
 
@@ -45,6 +45,36 @@ def main():
         try:
             answer = temperature.compare_temperature(unit1, unit2, num)
             return render_template('index.html', type='temperature', num=num, answer=answer)
+        except:
+            pass
+        
+        try:
+            answer = mass.compare_mass(unit1, unit2, num)
+            return render_template('index.html', type='mass', num=num, answer=answer)
+        except:
+            pass
+
+        try:
+            answer = time.compare_time(unit1, unit2, num)
+            return render_template('index.html', type='time', num=num, answer=answer)
+        except:
+            pass
+
+        try:
+            answer = volume.compare_volume(unit1, unit2, num)
+            return render_template('index.html', type='volume', num=num, answer=answer)
+        except:
+            pass
+
+        try:
+            answer = speed.compare_speed(unit1, unit2, num)
+            return render_template('index.html', type='speed', num=num, answer=answer)
+        except:
+            pass
+
+        try:
+            answer = energy.compare_energy(unit1, unit2, num)
+            return render_template('index.html', type='energy', num=num, answer=answer)
         except:
             pass
     return redirect(url_for('index'))

@@ -168,8 +168,11 @@ def km_mm(num, order=0):
 
 # MAIN FUNCTION
 def compare_length(unit1, unit2, num):
+    if unit1 == unit2:
+        answer = num
+
     # km
-    if unit1 == 'km' and unit2 == 'yard':
+    elif unit1 == 'km' and unit2 == 'yard':
         answer = km_yard(num)
     elif unit1 == 'yard' and unit2 == 'km':
         answer = km_yard(num, order=1)
@@ -293,8 +296,5 @@ def compare_length(unit1, unit2, num):
         answer = foot_mm(num)
     elif unit1 == 'mm' and unit2 == 'foot':
         answer = foot_mm(num, order=1)
-    
-    elif unit1 == unit2:
-        answer = num
 
     return answer

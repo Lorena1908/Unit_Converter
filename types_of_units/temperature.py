@@ -17,6 +17,9 @@ def f_k(num, order=0):
         return (num - 32) * 5/9 + 273
 
 def compare_temperature(unit1, unit2, num):
+    if unit1 == unit2:
+        answer = num
+    
     # c
     if unit1 == 'c' and unit2 == 'f':
         answer = c_f(num)

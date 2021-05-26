@@ -17,6 +17,9 @@ def pa_mmHg(num, order=0):
         return num / 133
 
 def compare_pressure(unit1, unit2, num):
+    if unit1 == unit2:
+        answer = num
+
     # atm
     if unit1 == 'atm' and unit2 == 'pa':
         answer = atm_pa(num)
